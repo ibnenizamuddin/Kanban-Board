@@ -8,19 +8,19 @@ function setWordTime() {
 
     let setCurrentTime = ''
     if (currentMinute === 0) {
-        setCurrentTime = `Its <span class="main">${timeArray[currentHour]}</span>  'O Clock Now`;
+        setCurrentTime = `It's <span class="main">${timeArray[currentHour]}</span>  'O Clock Now`;
     }
     else if (currentMinute === 15) {
-        setCurrentTime = `Its <span class="main">${timeArray[currentMinute]}</span>  past <span class="main">${timeArray[currentHour]}</span> `;
+        setCurrentTime = `It's <span class="main">${timeArray[currentMinute]}</span>  past <span class="main">${timeArray[currentHour]}</span> `;
     }
     else if (currentMinute < 30) {
-        setCurrentTime = `Its <span class="main">${timeArray[currentMinute]}</span>  minute past <span class="main">${timeArray[currentHour]}</span> `;
+        setCurrentTime = `It's <span class="main">${timeArray[currentMinute]}</span>  minute past <span class="main">${timeArray[currentHour]}</span> `;
     }
     else if (timeArray[60 - currentMinute] === 45) {
-        setCurrentTime = `Its <span class="main">${timeArray[60 - currentMinute]}</span>  to <span class="main">${timeArray[currentHour + 1]}</span>  `;
+        setCurrentTime = `It's <span class="main">${timeArray[60 - currentMinute]}</span>  to <span class="main">${timeArray[currentHour + 1]}</span>  `;
     }
     else {
-        setCurrentTime = `Its <span class="main">${timeArray[60 - currentMinute]}</span> minute to <span class="main">${timeArray[currentHour + 1]}</span>  `;
+        setCurrentTime = `It's <span class="main">${timeArray[60 - currentMinute]}</span> minute to <span class="main">${timeArray[currentHour + 1]}</span>  `;
     }
     timediv.innerHTML = setCurrentTime;
 
