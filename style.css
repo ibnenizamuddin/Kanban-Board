@@ -1,5 +1,3 @@
-
-
 html {
   box-sizing: border-box;
 }
@@ -26,13 +24,12 @@ body {
 h1 {
   letter-spacing: 2px;
   text-shadow: 2px 2px 5px whitesmoke;
-  color: black ;
+  color: black;
 }
 
 .main-title {
   text-align: center;
   font-size: 3rem;
-  
 }
 
 ul {
@@ -50,11 +47,12 @@ ul {
   align-items: flex-start;
 }
 
-#completeCount,#onHoldCount,#inprogressCount,#backlogCount:hover{
+#completeCount,
+#onHoldCount,
+#inprogressCount,
+#backlogCount:hover {
   cursor: pointer;
 }
-
-
 
 /* Columns */
 .drag-column {
@@ -64,7 +62,7 @@ ul {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   overflow-x: hidden;
-  transition: transform .10s;
+  transition: transform 0.1s;
 }
 
 .drag-column:hover {
@@ -148,6 +146,16 @@ ul {
   min-height: 50px;
 }
 
+#time-list {
+  font-size: 50px;
+  text-align: center;
+  color: whitesmoke;
+  background-color: black;
+}
+
+.main {
+  color: red;
+}
 
 .drag-item {
   margin: 10px;
@@ -190,7 +198,7 @@ ul {
 }
 
 .empty-btn:hover {
-  background-color:red;
+  background-color: red;
   color: rgba(255, 255, 255, 0.9);
 }
 
