@@ -9,6 +9,7 @@ html {
   --column-2: #d6fa0a;
   --column-3: #53bb57;
   --column-4: #fac20a;
+  --column-5: #ff6262;
 }
 
 body {
@@ -49,6 +50,12 @@ ul {
   align-items: flex-start;
 }
 
+#completeCount,#onHoldCount,#inprogressCount,#backlogCount:hover{
+  cursor: pointer;
+}
+
+
+
 /* Columns */
 .drag-column {
   flex: 1;
@@ -57,8 +64,12 @@ ul {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   overflow-x: hidden;
+  transition: transform .10s;
 }
 
+.drag-column:hover {
+  transform: scale(1.1);
+}
 .backlog-column .header,
 .backlog-column .solid,
 .backlog-column .solid:hover,
@@ -85,6 +96,13 @@ ul {
 .on-hold-column .solid:hover,
 .on-hold-column .over {
   background-color: var(--column-4);
+}
+
+.remove-column .header,
+.remove-column .solid,
+.remove-column .solid:hover,
+.remove-column .over {
+  background-color: var(--column-5);
 }
 
 /* Custom Scrollbar */
@@ -130,6 +148,7 @@ ul {
   min-height: 50px;
 }
 
+
 .drag-item {
   margin: 10px;
   padding: 10px;
@@ -168,6 +187,11 @@ ul {
 .add-btn:hover {
   background-color: rgba(255, 255, 255, 0.9);
   color: black;
+}
+
+.empty-btn:hover {
+  background-color:red;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .add-btn:active {

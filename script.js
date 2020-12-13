@@ -2,12 +2,14 @@ const addBtns = document.querySelectorAll('.add-btn:not(.solid)');
 const saveItemBtns = document.querySelectorAll('.solid');
 const addItemContainers = document.querySelectorAll('.add-container');
 const addItems = document.querySelectorAll('.add-item');
+const emptyItems = document.querySelectorAll('.empty-btn');
 // Item Lists
 const listColumns = document.querySelectorAll('.drag-item-list');
 const backlogListEl = document.getElementById('backlog-list');
 const progressListEl = document.getElementById('progress-list');
 const completeListEl = document.getElementById('complete-list');
 const onHoldListEl = document.getElementById('on-hold-list');
+const removeListEl = document.getElementById('remove-list');
 
 //Items COunter
 const backlogCount = document.getElementById('backlogCount');
@@ -15,8 +17,7 @@ const inprogressCount = document.getElementById('inprogressCount');
 const completeCount = document.getElementById('completeCount');
 const onHoldCount = document.getElementById('onHoldCount');
 
-
-
+const emptyArrayNames = ['backlogItems', 'progressItems', 'completeItems', 'onHoldItems'];
 
 // Items
 let updatedOnLoad = false;
@@ -163,6 +164,28 @@ function showInputBox(column) {
   addItemContainers[column].style.display = 'flex';
 }
 
+function emptyitems(column) {
+  if (confirm('Are you sure you want to empty everything in this bucket ?')) {
+    console.log(column)
+    localStorage.removeItem(emptyArrayNames[column]);
+    let blank=[];
+    localStorage.setItem(emptyArrayNames[column], JSON.stringify(blank));
+    location.reload();
+  } else {
+    // Do nothing!
+  }
+
+}
+
+function getListValues(column){
+  let storedValues = localStorage.getItem(emptyArrayNames[column]);
+  alert(storedValues);
+  console.log(storedValues);
+}
+
+
+
+
 // Hide Item Input Box
 function hideInputBox(column) {
   addBtns[column].style.visibility = 'visible';
@@ -209,7 +232,7 @@ function allowDrop(e) {
   e.preventDefault();
 }
 
-// Dropping Item in Column
+// Dropping Item in Column 
 function drop(e) {
   e.preventDefault();
   const parent = listColumns[currentColumn];
