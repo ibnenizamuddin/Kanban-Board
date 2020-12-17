@@ -38,7 +38,7 @@ setInterval(setBackgrounPhoto, 600 * 1000);
 async function setBackgrounPhoto(){
     try{
             //get API Key
-    const APIKey='Ccdvtii4CVCFlpw31ZeAeiXss_MC1rujCWXr_-P_lqU';
+    const APIKey='';
     const URL=`https://api.unsplash.com/photos/random?count=1&client_id=${APIKey}`;
     let response = await fetch(URL);
     PhotoImage= await response.json();
