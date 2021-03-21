@@ -10,6 +10,19 @@ html {
   --column-5: #ff6262;
 }
 
+#backlog-list .drag-item{
+  background-color: var(--column-1);
+}
+#progress-list .drag-item{
+  background-color: var(--column-2);
+}
+#complete-list .drag-item{
+  background-color: var(--column-3);
+}
+#on-hold-list .drag-item{
+  background-color: var(--column-5);
+}
+
 body {
   margin: 0;
   background: url("./main.jpg");
@@ -103,7 +116,7 @@ ul {
 .on-hold-column .solid,
 .on-hold-column .solid:hover,
 .on-hold-column .over {
-  background-color: var(--column-4);
+  background-color: var(--column-5);
 }
 
 .remove-column .header,
