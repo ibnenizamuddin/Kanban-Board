@@ -29,7 +29,8 @@ body {
   background-size: cover;
   background-position: 50% 60%;
   background-attachment: fixed;
-  color: white;
+  color: whitesmoke;
+  font-size: 1.3rem;
   font-family: Quicksand, sans-serif;
   overflow-y: hidden;
   transition: background linear 0.6s;
@@ -38,7 +39,6 @@ body {
 
 h1 {
   letter-spacing: 2px;
-
   color: black;
 }
 
