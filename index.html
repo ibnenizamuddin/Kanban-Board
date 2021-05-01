@@ -98,37 +98,14 @@
                     <div class="add-item" contenteditable="true"></div>
                 </div>
             </li>
-            <!-- On Hold Column -->
-            <li class="drag-column on-hold-column">
-                <span class="header">
-                    <h1>On Hold <span id=onHoldCount onclick=getListValues(3)></span></h1>
-                </span>
-                <!-- On Hold Content -->
-                <div id="on-hold-content" class="custom-scroll">
-                    <ul class="drag-item-list" id="on-hold-list" ondrop="drop(event)" ondragover="allowDrop(event)"
-                        ondragenter="dragEnter(3)"></ul>
-                </div>
-                <!-- Add Button Group -->
-                <div class="add-btn-group">
-                    <div class="add-btn" onclick="showInputBox(3)">
-                        <span class="plus-sign">+</span>
-                        <span>Add Item</span>
-                    </div>
-                    <div class="add-btn empty-btn" onclick="emptyitems(3)">
-                        <span class="plus-sign">-</span>
-                        <span>Empty</span>
-                    </div>
-                    <div class="add-btn solid" onclick="hideInputBox(3)">
-                        <span>Save Item</span>
-                    </div>
-                </div>
-                <div class="add-container">
-                    <div class="add-item" contenteditable="true"></div>
-                </div>
-            </li>
         </ul>
     </div>
     <br>
+    <div class="jokedata">  
+        <h1> <span id="joke" ></span></h1>
+        </div>
+    </div>
+    
     <div class="timedata">  
         <h1> <span id="time-list" ></span></h1>
         </div>
@@ -136,6 +113,7 @@
     <!-- Script -->
     <script src="script.js"></script>
     <script src="time.js"></script>
+    <script src="joke.js"></script>
 </body>
 
 </html>

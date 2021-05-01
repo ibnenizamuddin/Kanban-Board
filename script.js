@@ -15,9 +15,9 @@ const removeListEl = document.getElementById('remove-list');
 const backlogCount = document.getElementById('backlogCount');
 const inprogressCount = document.getElementById('inprogressCount');
 const completeCount = document.getElementById('completeCount');
-const onHoldCount = document.getElementById('onHoldCount');
 
-const emptyArrayNames = ['backlogItems', 'progressItems', 'completeItems', 'onHoldItems'];
+
+const emptyArrayNames = ['backlogItems', 'progressItems', 'completeItems'];
 
 // Items
 let updatedOnLoad = false;
@@ -26,7 +26,6 @@ let updatedOnLoad = false;
 let backlogListArray = [];
 let progressListArray = [];
 let completeListArray = [];
-let onHoldListArray = [];
 let listArrays = [];
 
 // Drag Functionality
@@ -36,12 +35,11 @@ let currentColumn;
 
 
 //funtion to set current count for Items List
-function setCurrentCountForItemList(bCount,iCount,cCount,oCount){
+function setCurrentCountForItemList(bCount, iCount, cCount) {
 
-backlogCount.innerHTML= bCount;
-inprogressCount.innerHTML= iCount;
-completeCount.innerHTML= cCount;
-onHoldCount.innerHTML= oCount;
+  backlogCount.innerHTML = bCount;
+  inprogressCount.innerHTML = iCount;
+  completeCount.innerHTML = cCount;
 
 }
 
@@ -51,31 +49,29 @@ function getSavedColumns() {
     backlogListArray = JSON.parse(localStorage.backlogItems);
     progressListArray = JSON.parse(localStorage.progressItems);
     completeListArray = JSON.parse(localStorage.completeItems);
-    onHoldListArray = JSON.parse(localStorage.onHoldItems);
   } else {
     backlogListArray = ['Add Backlog here'];
     progressListArray = ['Add In-Progress Here'];
     completeListArray = ['Add Completed Here'];
-    onHoldListArray = ['Add On Hold Here'];
   }
 }
 
 // Set localStorage Arrays
 function updateSavedColumns() {
-  listArrays = [backlogListArray, progressListArray, completeListArray, onHoldListArray];
-  const arrayNames = ['backlog', 'progress', 'complete', 'onHold'];
+  listArrays = [backlogListArray, progressListArray, completeListArray];
+  const arrayNames = ['backlog', 'progress', 'complete'];
   arrayNames.forEach((arrayName, index) => {
     localStorage.setItem(`${arrayName}Items`, JSON.stringify(listArrays[index]));
-  
+
   });
 
   let backlogCount = backlogListArray.length;
   let inprogressCount = progressListArray.length;
   let completeCount = completeListArray.length;
-  let onHoldCount = onHoldListArray.length;
 
-  setCurrentCountForItemList(backlogCount,inprogressCount,completeCount,onHoldCount);
-  
+
+  setCurrentCountForItemList(backlogCount, inprogressCount, completeCount);
+
 }
 
 // Filter Array to remove empty values
@@ -123,12 +119,7 @@ function updateDOM() {
     createItemEl(completeListEl, 2, completeItem, index);
   });
   completeListArray = filterArray(completeListArray);
-  // On Hold Column
-  onHoldListEl.textContent = '';
-  onHoldListArray.forEach((onHoldItem, index) => {
-    createItemEl(onHoldListEl, 3, onHoldItem, index);
-  });
-  onHoldListArray = filterArray(onHoldListArray);
+
   // Don't run more than once, Update Local Storage
   updatedOnLoad = true;
   updateSavedColumns();
@@ -168,7 +159,7 @@ function emptyitems(column) {
   if (confirm('Are you sure you want to empty everything in this bucket ?')) {
     console.log(column)
     localStorage.removeItem(emptyArrayNames[column]);
-    let blank=[];
+    let blank = [];
     localStorage.setItem(emptyArrayNames[column], JSON.stringify(blank));
     location.reload();
   } else {
@@ -177,7 +168,7 @@ function emptyitems(column) {
 
 }
 
-function getListValues(column){
+function getListValues(column) {
   let storedValues = localStorage.getItem(emptyArrayNames[column]);
   alert(storedValues);
   console.log(storedValues);
@@ -208,10 +199,7 @@ function rebuildArrays() {
   for (let i = 0; i < completeListEl.children.length; i++) {
     completeListArray.push(completeListEl.children[i].textContent);
   }
-  onHoldListArray = [];
-  for (let i = 0; i < onHoldListEl.children.length; i++) {
-    onHoldListArray.push(onHoldListEl.children[i].textContent);
-  }
+
   updateDOM();
 }
 

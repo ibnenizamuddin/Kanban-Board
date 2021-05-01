@@ -10,16 +10,16 @@ html {
   --column-5: #ff6262;
 }
 
-#backlog-list .drag-item{
+#backlog-list .drag-item {
   background-color: var(--column-1);
 }
-#progress-list .drag-item{
+#progress-list .drag-item {
   background-color: var(--column-2);
 }
-#complete-list .drag-item{
+#complete-list .drag-item {
   background-color: var(--column-3);
 }
-#on-hold-list .drag-item{
+#on-hold-list .drag-item {
   background-color: var(--column-5);
 }
 
@@ -38,7 +38,7 @@ body {
 
 h1 {
   letter-spacing: 2px;
-  text-shadow: 2px 2px 5px whitesmoke;
+
   color: black;
 }
 
@@ -78,14 +78,6 @@ ul {
   border-radius: 10px;
   overflow-x: hidden;
   transition: transform 0.1s;
-}
-.time-column {
-  flex: 1;
-  margin: 0 10px;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  overflow-x: hidden;
 }
 
 .drag-column:hover {
@@ -168,21 +160,21 @@ ul {
 .drag-item-list {
   min-height: 50px;
 }
-.timedata{
+
+.timedata {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row-reverse;
 }
 
-#time-list, #time-list-ist {
+#time-list {
   font-size: 30px;
   text-align: center;
   color: whitesmoke;
   background-color: black;
   border-radius: 10px;
 }
-
 
 .main {
   color: red;
