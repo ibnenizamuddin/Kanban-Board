@@ -54,7 +54,7 @@ ul {
 }
 
 .drag-container {
-  margin: 20px;
+  margin: 0px;
 }
 
 .drag-list {
@@ -159,19 +159,26 @@ ul {
   min-height: 50px;
 }
 
-.timedata {
+.quotes {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-direction: row-reverse;
+  justify-content: center;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  position: fixed;
 }
 
-#time-list,
+#time-list {
+  align-self: center;
+  font-size: 20px;
+  text-align: center;
+  color: whitesmoke;
+  border-radius: 10px;
+}
 #quotes {
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   color: black;
-  border-radius: 10px;
 }
 
 .main {
@@ -203,7 +210,8 @@ ul {
 
 .add-btn {
   margin: 10px;
-  padding: 5px 10px;
+  margin-bottom: 5px;
+  padding: 5px 5px;
   display: flex;
   align-items: center;
   cursor: pointer;
