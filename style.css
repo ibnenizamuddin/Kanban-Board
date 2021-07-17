@@ -74,10 +74,11 @@ ul {
   flex: 1;
   margin: 0 10px;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   overflow-x: hidden;
   transition: transform 0.1s;
+  box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.3);
 }
 
 .backlog-column .header,
@@ -165,11 +166,11 @@ ul {
   flex-direction: row-reverse;
 }
 
-#time-list {
+#time-list,
+#quotes {
   font-size: 30px;
   text-align: center;
-  color: whitesmoke;
-  background-color: black;
+  color: black;
   border-radius: 10px;
 }
 
