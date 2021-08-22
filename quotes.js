@@ -6605,4 +6605,4 @@ function getQuotes() {
 }
 
 getQuotes();
-setInterval(getQuotes, 30 * 1000);
+setInterval(getQuotes, 60 * 1000);
