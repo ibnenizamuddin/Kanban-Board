@@ -86,6 +86,12 @@ function createItemEl(columnEl, column, item, index) {
   const listEl = document.createElement('li');
   listEl.textContent = item;
   listEl.id = index;
+
+  if (item.indexOf("P1")>-1){
+    
+    listEl.style.backgroundColor='#ff6262'
+  }
+
   listEl.classList.add('drag-item');
   listEl.draggable = true;
   listEl.setAttribute('onfocusout', `updateItem(${index}, ${column})`);
@@ -157,7 +163,7 @@ function showInputBox(column) {
 
 function emptyitems(column) {
   if (confirm('Are you sure you want to empty everything in this bucket ?')) {
-    console.log(column)
+    
     localStorage.removeItem(emptyArrayNames[column]);
     let blank = [];
     localStorage.setItem(emptyArrayNames[column], JSON.stringify(blank));
@@ -171,7 +177,7 @@ function emptyitems(column) {
 function getListValues(column) {
   let storedValues = localStorage.getItem(emptyArrayNames[column]);
   alert(storedValues);
-  console.log(storedValues);
+  
 }
 
 
