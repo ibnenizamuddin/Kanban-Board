@@ -87,7 +87,7 @@ function createItemEl(columnEl, column, item, index) {
   listEl.textContent = item;
   listEl.id = index;
 
-  if (item.indexOf("P1")>-1){
+  if (item.indexOf("HP1")>-1){
     
     listEl.style.backgroundColor='#ff6262'
   }

@@ -10,6 +10,11 @@ html {
   --column-5: #ff6262;
 }
 
+[contenteditable] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
 #backlog-list .drag-item {
   background-color: var(--column-1);
 }
