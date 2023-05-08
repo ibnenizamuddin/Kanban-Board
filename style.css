@@ -8,6 +8,8 @@ html {
   --column-3: #53bb57;
   --column-4: #fac20a;
   --column-5: #ff6262;
+  --column-6: #16c5e8;
+  --column-7: #ae64ee;
 }
 
 #backlog-list .drag-item {
@@ -177,14 +179,51 @@ ul {
   border-radius: 10px;
 }
 #quotes {
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   color: black;
 }
 
 .main {
+  font-size: 18px;
   color: red;
 }
+
+.mainauth {
+  font-size: 18px;
+  color: black;
+}
+
+.infoboxes{
+  display: flex;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-bottom: 0px;
+  margin-left: 10px;
+
+}
+.infoboxhp{
+background-color: var(--column-5);
+  color: var(--column-5);
+  margin: 10px 10px;
+}
+
+.infoboxdir{
+  background-color: var(--column-6);
+  color: var(--column-6);
+  margin: 10px 10px;
+}
+
+.infoboxfs{
+  background-color: var(--column-7);
+  color: var(--column-7);
+  margin: 10px 10px;
+}
+
+
 
 .drag-item {
   margin: 10px;

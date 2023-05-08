@@ -87,10 +87,22 @@ function createItemEl(columnEl, column, item, index) {
   listEl.textContent = item;
   listEl.id = index;
 
+  if (item.indexOf("DIR")>-1){
+    
+    listEl.style.backgroundColor='#16c5e8'
+  }
+
+  if (item.indexOf("FO-UP")>-1){
+    
+    listEl.style.backgroundColor='#ae64ee'
+  }
+
   if (item.indexOf("HP-1")>-1){
     
     listEl.style.backgroundColor='#ff6262'
   }
+
+
 
   listEl.classList.add('drag-item');
   listEl.draggable = true;
