@@ -31,7 +31,7 @@ function setWordTime() {
 }
 
 setWordTime();
-setInterval(setWordTime, 60 * 1000);
+setInterval(setWordTime, 5 * 1000);
 
 
 

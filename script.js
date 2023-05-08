@@ -87,7 +87,7 @@ function createItemEl(columnEl, column, item, index) {
   listEl.textContent = item;
   listEl.id = index;
 
-  if (item.indexOf("HP1")>-1){
+  if (item.indexOf("HP-1")>-1){
     
     listEl.style.backgroundColor='#ff6262'
   }
@@ -163,10 +163,10 @@ function showInputBox(column) {
 
 function emptyitems(column) {
   if (confirm('Are you sure you want to empty everything in this bucket ?')) {
-    
     localStorage.removeItem(emptyArrayNames[column]);
-    let blank = [];
+    let blank = ['Daily Email and Teams Chat Follow Up'];
     localStorage.setItem(emptyArrayNames[column], JSON.stringify(blank));
+
     location.reload();
   } else {
     // Do nothing!
@@ -177,8 +177,7 @@ function emptyitems(column) {
 function getListValues(column) {
   let storedValues = localStorage.getItem(emptyArrayNames[column]);
   alert(storedValues);
-  
-}
+  }
 
 
 
